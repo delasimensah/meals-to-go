@@ -22,14 +22,12 @@ import {
 
 const RestaurantInfoCard = ({ restaurant = {} }) => {
   const {
-    name = "SomeRestaurant",
-    icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
-    photos = [
-      "https://www.foodiesfeed.com/wp-content/uploads/2019/06/top-view-for-box-of-2-burgers-home-made-600x899.jpg",
-    ],
-    address = "some random street",
-    isOpenNow = true,
-    rating = 4,
+    name,
+    icon,
+    photos,
+    address,
+    isOpenNow,
+    rating,
     isClosedTemporarily,
   } = restaurant;
 
@@ -44,8 +42,8 @@ const RestaurantInfoCard = ({ restaurant = {} }) => {
 
         <Section>
           <Rating>
-            {ratingArray.map(() => (
-              <SvgXml xml={star} width={20} height={20} />
+            {ratingArray.map((_, idx) => (
+              <SvgXml key={idx} xml={star} width={20} height={20} />
             ))}
           </Rating>
 
