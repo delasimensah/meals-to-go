@@ -3,6 +3,10 @@ import { Searchbar } from "react-native-paper";
 import { FlatList } from "react-native";
 import styled from "styled-components/native";
 
+// context
+import { useRestaurantsContext } from "../../../../services/restaurants/restaurants.context";
+
+// components
 import SafeArea from "../../../components/utility/safe-area.component";
 import RestaurantInfoCard from "../components/restaurant-info-card/restaurant.info-card.component";
 import Spacer from "../../../components/spacer/space.component";
@@ -16,35 +20,11 @@ const RestaurantList = styled(FlatList).attrs({
     padding: 16,
   },
 })``;
-const data = [
-  {
-    id: 1,
-    name: "SomeRestaurant",
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
-    photos: [
-      "https://www.foodiesfeed.com/wp-content/uploads/2019/06/top-view-for-box-of-2-burgers-home-made-600x899.jpg",
-    ],
-    address: "some random street",
-    isOpenNow: true,
-    rating: 4,
-    isClosedTemporarily: false,
-  },
-
-  {
-    id: 2,
-    name: "SomeRestaurant2",
-    icon: "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
-    photos: [
-      "https://www.foodiesfeed.com/wp-content/uploads/2019/06/top-view-for-box-of-2-burgers-home-made-600x899.jpg",
-    ],
-    address: "another random street",
-    isOpenNow: false,
-    rating: 5,
-    isClosedTemporarily: true,
-  },
-];
 
 export default () => {
+  // restaurants state
+  const { restaurants } = useRestaurantsContext();
+
   return (
     <SafeArea>
       <SearchContainer>
@@ -52,7 +32,7 @@ export default () => {
       </SearchContainer>
 
       <RestaurantList
-        data={data}
+        data={restaurants}
         renderItem={({ item }) => (
           <Spacer position="bottom" size="large">
             <RestaurantInfoCard restaurant={item} />
