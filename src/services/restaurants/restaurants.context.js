@@ -33,7 +33,7 @@ export const RestaurantsContextProvider = ({ children }) => {
         setIsLoading(false);
       } catch {
         setIsLoading(false);
-        console.log("not found");
+        setError("not found");
       }
     }, 2000);
   };
