@@ -6,7 +6,10 @@ import React, {
   useMemo,
 } from "react";
 
-import { restaurantsRequest, restaurantTransform } from "./restaurants.service";
+import {
+  restaurantsRequest,
+  restaurantsTransform,
+} from "./restaurants.service";
 
 const RestaurantContext = createContext();
 
@@ -15,15 +18,36 @@ export const useRestaurantsContext = () => useContext(RestaurantContext);
 export const RestaurantsContextProvider = ({ children }) => {
   const [restaurants, setRestaurants] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setIsError] = useState(null);
+  const [error, setError] = useState(null);
+
+  const getRestaurants = () => {
+    setIsLoading(true);
+
+    setTimeout(async () => {
+      setIsLoading(true);
+
+      try {
+        const data = await restaurantsRequest();
+        const transformedData = restaurantsTransform(data);
+        setRestaurants(transformedData);
+        setIsLoading(false);
+      } catch {
+        setIsLoading(false);
+        console.log("not found");
+      }
+    }, 2000);
+  };
 
   useEffect(() => {
-    // get restaurants
+    getRestaurants();
   }, []);
+
   return (
     <RestaurantContext.Provider
       value={{
-        retaurants: [1, 2, 3],
+        restaurants,
+        isLoading,
+        error,
       }}
     >
       {children}

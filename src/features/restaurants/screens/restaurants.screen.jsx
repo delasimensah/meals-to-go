@@ -4,7 +4,7 @@ import { FlatList } from "react-native";
 import styled from "styled-components/native";
 
 // context
-import { useRestaurantsContext } from "../../../../services/restaurants/restaurants.context";
+import { useRestaurantsContext } from "../../../services/restaurants/restaurants.context";
 
 // components
 import SafeArea from "../../../components/utility/safe-area.component";
@@ -22,7 +22,6 @@ const RestaurantList = styled(FlatList).attrs({
 })``;
 
 export default () => {
-  // restaurants state
   const { restaurants } = useRestaurantsContext();
 
   return (
@@ -38,7 +37,7 @@ export default () => {
             <RestaurantInfoCard restaurant={item} />
           </Spacer>
         )}
-        keyExtractor={(item) => item.id}
+        keyExtractor={(item) => item.name}
       />
     </SafeArea>
   );
