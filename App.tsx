@@ -3,8 +3,8 @@ import { Text, View } from "react-native";
 
 const App = () => {
   return (
-    <View className="flex-1 bg-white items-center justify-center">
-      <Text className="text-red-500 text-3xl font-bold">Meals To Go App!</Text>
+    <View className="flex-1 items-center justify-center bg-white">
+      <Text>Meals To Go App!</Text>
 
       <StatusBar style="auto" />
     </View>
