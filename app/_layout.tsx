@@ -5,18 +5,6 @@ import { useEffect } from "react";
 
 export { ErrorBoundary } from "expo-router";
 
-// /
-// /retaurants/detail
-
-// /checkout
-// /checkout/success
-// /checkout/error
-
-// /map
-
-// /settings
-// /settings/favourites
-
 const AppLayout = () => {
   const [loaded, error] = useFonts({
     Inter_900Black,
@@ -39,7 +27,7 @@ const AppLayout = () => {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: "#2f95dc",
+        headerShown: false,
       }}
     >
       <Tabs.Screen
@@ -57,7 +45,7 @@ const AppLayout = () => {
         options={{
           title: "Checkout",
           tabBarIcon: ({ color }) => (
-            <Ionicons name="md-restaurant" color={color} size={28} />
+            <Ionicons name="md-cart" color={color} size={28} />
           ),
         }}
       />
@@ -66,8 +54,9 @@ const AppLayout = () => {
         name="map"
         options={{
           title: "Map",
+          headerShown: true,
           tabBarIcon: ({ color }) => (
-            <Ionicons name="md-restaurant" color={color} size={28} />
+            <Ionicons name="md-map" color={color} size={28} />
           ),
         }}
       />
@@ -77,7 +66,7 @@ const AppLayout = () => {
         options={{
           title: "Settings",
           tabBarIcon: ({ color }) => (
-            <Ionicons name="md-restaurant" color={color} size={28} />
+            <Ionicons name="md-settings" color={color} size={28} />
           ),
         }}
       />

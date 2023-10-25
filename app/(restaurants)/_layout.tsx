@@ -6,14 +6,14 @@ const RestaurantsLayout = () => {
       <Stack.Screen
         name="index"
         options={{
-          headerShown: false,
+          title: "Restaurants",
         }}
       />
 
       <Stack.Screen
         name="restaurant/[id]"
         options={{
-          headerShown: false,
+          title: "Details",
         }}
       />
     </Stack>

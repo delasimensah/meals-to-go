@@ -6,7 +6,7 @@ const CheckoutLayout = () => {
       <Stack.Screen
         name="index"
         options={{
-          headerShown: false,
+          title: "Checkout",
         }}
       />
     </Stack>
