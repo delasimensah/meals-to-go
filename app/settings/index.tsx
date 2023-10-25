@@ -1,11 +1,11 @@
 import { View, Text } from "react-native";
 
-const Home = () => {
+const SettingsScreen = () => {
   return (
     <View className="flex-1 items-center justify-center">
-      <Text>Home</Text>
+      <Text>Settings</Text>
     </View>
   );
 };
 
-export default Home;
+export default SettingsScreen;
