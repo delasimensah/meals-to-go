@@ -7,7 +7,7 @@ type SessionStore = {
 };
 
 export const useSession = create<SessionStore>((set) => ({
-  session: null,
+  session: "session",
   login: () => set({ session: "session" }),
   logout: () => set({ session: null }),
 }));

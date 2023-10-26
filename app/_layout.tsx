@@ -1,8 +1,11 @@
 import { useFonts, Inter_900Black } from "@expo-google-fonts/inter";
 import { Slot, SplashScreen } from "expo-router";
+import { StatusBar } from "expo-status-bar";
 import { useEffect } from "react";
 
 export { ErrorBoundary } from "expo-router";
+
+SplashScreen.preventAutoHideAsync();
 
 const RootLayout = () => {
   const [loaded, error] = useFonts({
@@ -23,7 +26,12 @@ const RootLayout = () => {
     return null;
   }
 
-  return <Slot />;
+  return (
+    <>
+      <StatusBar style="auto" />
+      <Slot />
+    </>
+  );
 };
 
 export default RootLayout;

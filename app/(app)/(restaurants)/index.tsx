@@ -1,21 +1,18 @@
-import { Link } from "expo-router";
-import { View, Text } from "react-native";
+import { View, SafeAreaView, StatusBar } from "react-native";
 
-import { useSession } from "@/hooks/use-session-store";
+import { Search, RestaurantInfo } from "@/components";
 
 const RestaurantsScreen = () => {
-  const { logout } = useSession();
-
   return (
-    <View className="flex-1 items-center justify-center space-y-2">
-      <Text>Restaurants</Text>
-      <Link href="/restaurant/res-one">Restaurant One</Link>
-      <Link href="/restaurant/res-two">Restaurant Two</Link>
-      <Link href="/restaurant/res-three">Restaurant Three</Link>
-      <Link href="/restaurant/res-four">Restaurant Four</Link>
-      <Link href="/restaurant/res-five">Restaurant Five</Link>
-      <Text onPress={() => logout()}>Logout</Text>
-    </View>
+    <SafeAreaView className={`flex-1 mt-[${StatusBar.currentHeight}]`}>
+      <Search
+        inputStyle="bg-white min-h-0 rounded-full"
+        searchStyle="bg-white "
+      />
+      <View className="flex-1 bg-blue-400 p-2">
+        <RestaurantInfo />
+      </View>
+    </SafeAreaView>
   );
 };
 
