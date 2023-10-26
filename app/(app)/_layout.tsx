@@ -7,7 +7,7 @@ const AppLayout = () => {
   const { session } = useSession();
 
   if (!session) {
-    return <Redirect href="\login" />;
+    return <Redirect href="\(auth)" />;
   }
 
   return (

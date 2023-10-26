@@ -5,12 +5,15 @@ const RestaurantsLayout = () => {
     <Stack
       screenOptions={{
         headerBackTitleVisible: false,
+        headerShown: false,
       }}
     >
+      <Stack.Screen name="index" />
+
       <Stack.Screen
-        name="index"
+        name="restaurant/[id]"
         options={{
-          title: "Restaurants",
+          presentation: "modal",
         }}
       />
     </Stack>
