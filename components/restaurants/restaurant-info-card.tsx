@@ -16,7 +16,7 @@ type RestaurantInfoProps = {
 };
 
 const RestaurantInfo: FC<RestaurantInfoProps> = ({ restaurant }) => {
-  return <Text>RestaurantInfo</Text>;
+  return <Text className="font-heading">RestaurantInfo</Text>;
 };
 
 export default RestaurantInfo;
