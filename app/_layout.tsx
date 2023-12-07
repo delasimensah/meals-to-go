@@ -1,4 +1,8 @@
-import { useFonts, Inter_900Black } from "@expo-google-fonts/inter";
+import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
+import {
+  useFonts as useOswald,
+  Oswald_400Regular,
+} from "@expo-google-fonts/oswald";
 import { Slot, SplashScreen } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { useEffect } from "react";
@@ -8,27 +12,32 @@ export { ErrorBoundary } from "expo-router";
 SplashScreen.preventAutoHideAsync();
 
 const RootLayout = () => {
-  const [loaded, error] = useFonts({
-    Inter_900Black,
+  const [oswaldLoaded, oswaldError] = useOswald({
+    Oswald_400Regular,
+  });
+
+  const [latoLoaded, latoError] = useLato({
+    Lato_400Regular,
   });
 
   useEffect(() => {
-    if (error) throw error;
-  }, [error]);
+    if (oswaldError || latoError) throw new Error("Error loading fonts");
+  }, [oswaldError, latoError]);
 
   useEffect(() => {
-    if (loaded) {
+    if (oswaldLoaded && latoLoaded) {
       SplashScreen.hideAsync();
     }
-  }, [loaded]);
+  }, [oswaldLoaded]);
 
-  if (!loaded) {
+  if (!oswaldLoaded || !latoLoaded) {
     return null;
   }
 
   return (
     <>
       <StatusBar style="auto" />
+
       <Slot />
     </>
   );

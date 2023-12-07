@@ -9,7 +9,7 @@ const RestaurantsScreen = () => {
         inputStyle="min-h-[30] text-sm"
         searchStyle="rounded-xl bg-white"
       />
-      <View className="flex-1 bg-blue-400 p-2">
+      <View className="flex-1 p-2">
         <RestaurantInfoCard />
       </View>
     </SafeAreaView>
