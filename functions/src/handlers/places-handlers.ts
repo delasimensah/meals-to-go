@@ -5,8 +5,6 @@ import { googleClient } from "../utils/google-client";
 export const getPlaces = async (req: Request, res: Response) => {
   const location = req.query.location;
 
-  console.log(location);
-
   try {
     const response = await googleClient.placesNearby({
       params: {
