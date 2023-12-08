@@ -1,7 +1,12 @@
-import * as logger from "firebase-functions/logger";
+import * as express from "express";
 import { onRequest } from "firebase-functions/v2/https";
 
-export const helloWorld = onRequest((_, response) => {
-  logger.info("Hello logs!", { structuredData: true });
-  response.send(`Hello from Firebase! ${process.env.GOOGLE_API_KEY}`);
-});
+import { getGeoCode } from "./handlers/geocode-handlers";
+import { getPlaces } from "./handlers/places-handlers";
+
+const app = express();
+
+app.get("/geocode", getGeoCode);
+app.get("/placesNearby", getPlaces);
+
+export const api = onRequest({ cors: true }, app);
