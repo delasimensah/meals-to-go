@@ -1,10 +1,15 @@
 import { Ionicons } from "@expo/vector-icons";
 import { Tabs, Redirect } from "expo-router";
 
+// import { useLocation } from "@/hooks/use-location";
+// import { useRestaurants } from "@/hooks/use-restaurants";
 import { useSession } from "@/hooks/use-session-store";
 
 const AppLayout = () => {
   const { session } = useSession();
+
+  // useLocation();
+  // useRestaurants();
 
   if (!session) {
     return <Redirect href="\(auth)" />;

@@ -28,7 +28,7 @@ const RootLayout = () => {
     if (oswaldLoaded && latoLoaded) {
       SplashScreen.hideAsync();
     }
-  }, [oswaldLoaded]);
+  }, [oswaldLoaded, latoLoaded]);
 
   if (!oswaldLoaded || !latoLoaded) {
     return null;

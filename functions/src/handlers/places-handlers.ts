@@ -5,6 +5,8 @@ import { googleClient } from "../utils/google-client";
 export const getPlaces = async (req: Request, res: Response) => {
   const location = req.query.location;
 
+  console.log(location);
+
   try {
     const response = await googleClient.placesNearby({
       params: {
@@ -18,7 +20,7 @@ export const getPlaces = async (req: Request, res: Response) => {
 
     return res.json(response.data);
   } catch (error: any) {
-    console.log("Something went wrong", error.message);
+    console.log("Places API error", error.message);
     return res.status(400).json({ message: error.message });
   }
 };

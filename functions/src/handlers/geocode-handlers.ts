@@ -16,7 +16,7 @@ export const getGeoCode = async (req: Request, res: Response) => {
 
     return res.json(response.data);
   } catch (error: any) {
-    console.log("Something went wrong", error.message);
+    console.log("Geocode API error", error.message);
     return res.status(400).json({ message: error.message });
   }
 };

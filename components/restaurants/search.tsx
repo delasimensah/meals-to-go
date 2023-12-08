@@ -1,7 +1,9 @@
 import { styled } from "nativewind";
-import { FC } from "react";
+import { FC, useState } from "react";
 import { View, TextInputProps, ViewProps } from "react-native";
 import { Searchbar } from "react-native-paper";
+
+import { useLocationStore } from "@/hooks/use-location-store";
 
 type SearchProps = {
   value?: string;
@@ -11,15 +13,26 @@ type SearchProps = {
 };
 
 const Search: FC<SearchProps> = ({ inputStyle, searchStyle }) => {
+  const { keyword, setKeyword, setLocLoading } = useLocationStore();
+
+  const [searchKeyword, setSearchKeyword] = useState(keyword);
+
+  const handleSearch = () => {
+    setLocLoading(true);
+    setKeyword(searchKeyword);
+  };
+
   return (
     <View className="p-2">
       <Searchbar
         placeholder="Search for a location"
-        value=""
+        value={searchKeyword}
         mode="view"
         showDivider={false}
         inputStyle={inputStyle}
         style={searchStyle}
+        onSubmitEditing={handleSearch}
+        onChangeText={(text) => setSearchKeyword(text)}
       />
     </View>
   );
