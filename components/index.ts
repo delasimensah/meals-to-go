@@ -4,3 +4,6 @@ export { default as RestaurantInfoCard } from "./restaurants/restaurant-info-car
 
 // animations
 export { default as FadeInView } from "./animations/fade-in-view";
+
+// general
+export { default as SafeAreaView } from "./safe-area";
