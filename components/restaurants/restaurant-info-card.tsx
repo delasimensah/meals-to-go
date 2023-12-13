@@ -20,9 +20,12 @@ type RestaurantInfoProps = {
   restaurant: any;
 };
 
-const RestaurantInfo: FC<RestaurantInfoProps> = ({ restaurant }) => {
+const RestaurantInfoCard: FC<RestaurantInfoProps> = ({ restaurant }) => {
   return (
-    <Card elevation={2} className="w-[95%] self-center bg-bg-primary">
+    <Card
+      elevation={2}
+      className="w-[95%] self-center rounded-md bg-bg-primary"
+    >
       <View>
         <Card.Cover
           className="bg-bg-primary p-4"
@@ -76,4 +79,4 @@ const RestaurantInfo: FC<RestaurantInfoProps> = ({ restaurant }) => {
   );
 };
 
-export default RestaurantInfo;
+export default RestaurantInfoCard;
