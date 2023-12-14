@@ -1,10 +1,10 @@
 import { create } from "zustand";
 
-// import { Restaurant } from "@/types";
+import { Restaurant } from "@/types";
 
 type RestaurantsStore = {
-  restaurants: any[];
-  setRestaurants: (retaurants: any[]) => void;
+  restaurants: Restaurant[];
+  setRestaurants: (retaurants: Restaurant[]) => void;
   resLoading: boolean;
   setResLoading: (resLoading: boolean) => void;
   resError: string;

@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect } from "react";
 
 import { useLocationStore } from "@/hooks/use-location-store";
+import { host, isMock } from "@/lib/env";
 import { formatLocationData } from "@/lib/utils";
 import { Location } from "@/types";
 
@@ -15,9 +16,7 @@ export const useLocation = () => {
     const getLocation = async () => {
       try {
         const response = await axios.get(
-          `${
-            process.env.EXPO_PUBLIC_DEV_URL
-          }/geocode?city=${keyword.toLowerCase()}`,
+          `${host}/geocode?city=${keyword.toLowerCase()}&mock=${isMock}`,
         );
 
         const formattedLocationData: Location = formatLocationData(

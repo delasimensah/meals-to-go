@@ -14,7 +14,7 @@ type LocationStore = {
 };
 
 export const useLocationStore = create<LocationStore>((set) => ({
-  keyword: "Accra",
+  keyword: "Toronto",
   setKeyword: (keyword) => set({ keyword }),
   locLoading: false,
   setLocLoading: (locLoading) => set({ locLoading }),

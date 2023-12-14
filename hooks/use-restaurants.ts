@@ -3,6 +3,7 @@ import { useEffect } from "react";
 
 import { useLocationStore } from "@/hooks/use-location-store";
 import { useRestaurantsStore } from "@/hooks/use-restaurants-store";
+import { host, isMock } from "@/lib/env";
 import { restaurantsTransform } from "@/lib/utils";
 
 export const useRestaurants = () => {
@@ -16,7 +17,7 @@ export const useRestaurants = () => {
 
       try {
         const response = await axios.get(
-          `${process.env.EXPO_PUBLIC_DEV_URL}/placesNearby?location=${location}`,
+          `${host}/placesNearby?location=${location}&mock=${isMock}`,
         );
 
         const transformedRestaurantsData = restaurantsTransform(
