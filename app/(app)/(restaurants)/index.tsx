@@ -49,7 +49,7 @@ const RestaurantsScreen = () => {
           data={restaurants}
           renderItem={({ item }) => {
             return (
-              <Link href={`/restaurant/${item.name}`} asChild>
+              <Link href={`restaurant/${item.name}`} asChild>
                 <Pressable>
                   <View className="mb-4">
                     <FadeInView>
@@ -60,7 +60,7 @@ const RestaurantsScreen = () => {
               </Link>
             );
           }}
-          keyExtractor={(item) => item.name}
+          keyExtractor={(item) => item.name!}
           className="p-4"
         />
       )}

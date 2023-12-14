@@ -1,13 +1,13 @@
 import { antwerp } from "./antwerp";
 import { chicago } from "./chicago";
-import { sanFransico } from "./san_fransico";
+import { sanFrancisco } from "./san_francisco";
 import { toronto } from "./toronto";
 
 export const mocks = {
   "51.219448,4.402464": antwerp,
   "43.653225,-79.383186": toronto,
   "41.878113,-87.629799": chicago,
-  "37.7749295,-122.4194155": sanFransico,
+  "37.7749295,-122.4194155": sanFrancisco,
 };
 
 const mockImages = [

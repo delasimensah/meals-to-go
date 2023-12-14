@@ -14,9 +14,9 @@ const RestaurantsLayout = () => {
       <Stack.Screen name="index" />
 
       <Stack.Screen
-        name="restaurant/[id]"
+        name="restaurant/[name]"
         options={{
-          presentation: "modal",
+          presentation: "containedModal",
         }}
       />
     </Stack>

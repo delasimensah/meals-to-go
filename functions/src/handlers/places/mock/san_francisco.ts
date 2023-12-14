@@ -1,4 +1,4 @@
-export const sanFransico = {
+export const sanFrancisco = {
   html_attributions: [],
   next_page_token: "some token",
   results: [

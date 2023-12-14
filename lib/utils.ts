@@ -2,6 +2,8 @@ import camelize from "camelize-ts";
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
+import { Restaurant } from "@/types";
+
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
@@ -24,5 +26,5 @@ export const restaurantsTransform = (results: any[] = []) => {
     };
   });
 
-  return camelize(mappedResults);
+  return camelize(mappedResults) as Restaurant[];
 };

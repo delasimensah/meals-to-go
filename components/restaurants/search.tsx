@@ -33,6 +33,7 @@ const Search: FC<SearchProps> = ({ inputStyle, searchStyle }) => {
         style={searchStyle}
         onSubmitEditing={handleSearch}
         onChangeText={(text) => setSearchKeyword(text)}
+        elevation={2}
       />
     </View>
   );

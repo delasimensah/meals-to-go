@@ -7,3 +7,4 @@ export { default as FadeInView } from "./animations/fade-in-view";
 
 // general
 export { default as SafeAreaView } from "./safe-area";
+export { default as Button } from "./custom-button";
