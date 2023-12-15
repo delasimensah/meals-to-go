@@ -6,11 +6,12 @@ import Accordion from "./_components/accordion";
 
 import { RestaurantInfoCard, SafeAreaView, Button } from "@/components";
 import { useRestaurantsStore } from "@/hooks/use-restaurants-store";
-import { colors } from "@/lib/theme/colors";
+import { useAppTheme } from "@/lib/paperTheme";
 
 const RestaurantDetailScreen = () => {
   const { name } = useLocalSearchParams();
   const { restaurants } = useRestaurantsStore();
+  const theme = useAppTheme();
 
   const restaurant = restaurants.find((restaurant) => restaurant.name === name);
 
@@ -59,7 +60,6 @@ const RestaurantDetailScreen = () => {
       <View className="mb-5">
         <Button
           text="Order Special Only 12.99"
-          buttonColor={colors.brand.primary}
           onPress={() => {
             router.push("/checkout");
           }}
@@ -70,7 +70,7 @@ const RestaurantDetailScreen = () => {
 
         <Button
           text="Close"
-          buttonColor={colors.ui.error}
+          buttonColor={theme.colors.ui.error}
           onPress={() => {
             router.back();
           }}

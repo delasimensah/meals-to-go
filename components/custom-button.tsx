@@ -1,10 +1,12 @@
 import { FC } from "react";
 import { View } from "react-native";
-import { Button } from "react-native-paper";
+import { Button, useTheme } from "react-native-paper";
+
+import { fonts } from "@/lib/theme/fonts";
 
 type CustomButtonProps = {
   onPress: () => void;
-  buttonColor: string;
+  buttonColor?: string;
   icon?: string;
   text: string;
 };
@@ -15,6 +17,8 @@ const CustomButton: FC<CustomButtonProps> = ({
   icon,
   text,
 }) => {
+  const theme = useTheme();
+
   return (
     <View>
       <Button
@@ -25,7 +29,10 @@ const CustomButton: FC<CustomButtonProps> = ({
           width: "80%",
           alignSelf: "center",
           padding: 4,
-          borderRadius: 2,
+          borderRadius: theme.roundness,
+        }}
+        labelStyle={{
+          fontFamily: fonts.heading,
         }}
         buttonColor={buttonColor}
       >

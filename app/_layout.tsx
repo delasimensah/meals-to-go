@@ -6,6 +6,9 @@ import {
 import { Slot, SplashScreen } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { useEffect } from "react";
+import { PaperProvider } from "react-native-paper";
+
+import { paperTheme } from "@/lib/paperTheme";
 
 export { ErrorBoundary } from "expo-router";
 
@@ -38,7 +41,9 @@ const RootLayout = () => {
     <>
       <StatusBar style="auto" />
 
-      <Slot />
+      <PaperProvider theme={paperTheme}>
+        <Slot />
+      </PaperProvider>
     </>
   );
 };
