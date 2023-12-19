@@ -23,7 +23,7 @@ const Search: FC<SearchProps> = ({ inputStyle, searchStyle }) => {
   };
 
   return (
-    <View className="p-2">
+    <View className="absolute top-[60px] z-[999] w-full p-2">
       <Searchbar
         placeholder="Search for a location"
         value={searchKeyword}

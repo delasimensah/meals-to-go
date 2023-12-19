@@ -45,7 +45,6 @@ const AppLayout = () => {
         name="map"
         options={{
           title: "Map",
-          headerShown: true,
           tabBarIcon: ({ color }) => (
             <Ionicons name="md-map" color={color} size={28} />
           ),

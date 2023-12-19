@@ -61,7 +61,7 @@ const RestaurantsScreen = () => {
             );
           }}
           keyExtractor={(item) => item.name!}
-          className="p-4"
+          className="mt-[60px] p-4"
         />
       )}
     </SafeAreaView>
