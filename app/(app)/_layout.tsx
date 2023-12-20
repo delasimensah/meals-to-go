@@ -4,9 +4,26 @@ import { Tabs, Redirect } from "expo-router";
 import { useLocation } from "@/hooks/use-location";
 import { useRestaurants } from "@/hooks/use-restaurants";
 import { useSession } from "@/hooks/use-session-store";
+import { useAppTheme } from "@/lib/paperTheme";
+
+const getTabBarIcon = (
+  name: "md-restaurant" | "md-cart" | "md-map" | "md-settings",
+) => {
+  return ({
+    color,
+    size,
+  }: {
+    color: string;
+    size: number;
+    focused: boolean;
+  }) => {
+    return <Ionicons name={name} color={color} size={size} />;
+  };
+};
 
 const AppLayout = () => {
   const { session } = useSession();
+  const theme = useAppTheme();
 
   useLocation();
   useRestaurants();
@@ -19,15 +36,15 @@ const AppLayout = () => {
     <Tabs
       screenOptions={{
         headerShown: false,
+        tabBarActiveTintColor: theme.colors.brand.primary,
+        tabBarInactiveTintColor: theme.colors.brand.muted,
       }}
     >
       <Tabs.Screen
         name="(restaurants)"
         options={{
           title: "Restaurants",
-          tabBarIcon: ({ color }) => (
-            <Ionicons name="md-restaurant" color={color} size={28} />
-          ),
+          tabBarIcon: getTabBarIcon("md-restaurant"),
         }}
       />
 
@@ -35,9 +52,7 @@ const AppLayout = () => {
         name="checkout"
         options={{
           title: "Checkout",
-          tabBarIcon: ({ color }) => (
-            <Ionicons name="md-cart" color={color} size={28} />
-          ),
+          tabBarIcon: getTabBarIcon("md-cart"),
         }}
       />
 
@@ -45,9 +60,7 @@ const AppLayout = () => {
         name="map"
         options={{
           title: "Map",
-          tabBarIcon: ({ color }) => (
-            <Ionicons name="md-map" color={color} size={28} />
-          ),
+          tabBarIcon: getTabBarIcon("md-map"),
         }}
       />
 
@@ -55,9 +68,7 @@ const AppLayout = () => {
         name="settings"
         options={{
           title: "Settings",
-          tabBarIcon: ({ color }) => (
-            <Ionicons name="md-settings" color={color} size={28} />
-          ),
+          tabBarIcon: getTabBarIcon("md-settings"),
         }}
       />
     </Tabs>
