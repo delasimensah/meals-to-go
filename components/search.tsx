@@ -8,6 +8,7 @@ import { useLocationStore } from "@/hooks/use-location-store";
 type SearchProps = {
   value?: string;
   placeholder?: string;
+  isFavouritesToggled?: boolean;
   inputStyle?: TextInputProps["style"];
   searchStyle?: ViewProps["style"];
 };
@@ -34,6 +35,7 @@ const Search: FC<SearchProps> = ({ inputStyle, searchStyle }) => {
         onSubmitEditing={handleSearch}
         onChangeText={(text) => setSearchKeyword(text)}
         elevation={2}
+        icon="heart-outline"
       />
     </View>
   );

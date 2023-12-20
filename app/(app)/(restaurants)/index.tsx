@@ -19,10 +19,7 @@ const RestaurantsScreen = () => {
 
   return (
     <SafeAreaView>
-      <Search
-        inputStyle="min-h-[30] text-sm"
-        searchStyle="rounded-xl bg-white"
-      />
+      <Search inputStyle="min-h-[30px]" searchStyle="rounded-xl bg-white" />
 
       {resLoading && (
         <View className="flex-1 items-center justify-center">

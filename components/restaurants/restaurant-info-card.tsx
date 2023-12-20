@@ -5,6 +5,7 @@ import { SvgXml } from "react-native-svg";
 
 import open from "../../assets/open";
 import star from "../../assets/star";
+import FavouriteIcon from "../favourites/favourite-icon";
 
 import { Restaurant } from "@/types";
 
@@ -19,6 +20,7 @@ const RestaurantInfoCard: FC<RestaurantInfoProps> = ({ restaurant }) => {
       className="w-[95%] self-center rounded-md bg-bg-primary"
     >
       <View>
+        <FavouriteIcon restaurant={restaurant} />
         <Card.Cover
           className="bg-bg-primary p-4"
           key={restaurant?.name}

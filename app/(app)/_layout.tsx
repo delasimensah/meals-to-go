@@ -57,7 +57,7 @@ const AppLayout = () => {
       />
 
       <Tabs.Screen
-        name="map"
+        name="map/index"
         options={{
           title: "Map",
           tabBarIcon: getTabBarIcon("md-map"),

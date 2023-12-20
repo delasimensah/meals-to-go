@@ -6,6 +6,9 @@ export { default as CompactRestaurantInfo } from "./restaurants/compact-restaura
 // animations
 export { default as FadeInView } from "./animations/fade-in-view";
 
+// favourites
+export { default as FavouriteIcon } from "./favourites/favourite-icon";
+
 // general
 export { default as SafeAreaView } from "./safe-area";
 export { default as Button } from "./custom-button";
