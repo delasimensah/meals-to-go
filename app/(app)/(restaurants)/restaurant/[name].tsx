@@ -5,7 +5,7 @@ import { Divider } from "react-native-paper";
 import Accordion from "./_components/accordion";
 
 import { RestaurantInfoCard, SafeAreaView, Button } from "@/components";
-import { useRestaurantsStore } from "@/hooks/use-restaurants-store";
+import { useRestaurantsStore } from "@/hooks/zustand/use-restaurants-store";
 import { useAppTheme } from "@/lib/paperTheme";
 
 const RestaurantDetailScreen = () => {

@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import MapView, { Marker, Callout } from "react-native-maps";
 
 import { Search, CompactRestaurantInfo } from "@/components";
-import { useLocationStore } from "@/hooks/use-location-store";
-import { useRestaurantsStore } from "@/hooks/use-restaurants-store";
+import { useLocationStore } from "@/hooks/zustand/use-location-store";
+import { useRestaurantsStore } from "@/hooks/zustand/use-restaurants-store";
 
 const MapScreen = () => {
   const { location } = useLocationStore();

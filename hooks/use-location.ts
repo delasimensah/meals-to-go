@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect } from "react";
 
-import { useLocationStore } from "@/hooks/use-location-store";
+import { useLocationStore } from "@/hooks/zustand/use-location-store";
 import { host, isMock } from "@/lib/env";
 import { formatLocationData } from "@/lib/utils";
 import { Location } from "@/types";

@@ -3,7 +3,7 @@ import { Tabs, Redirect } from "expo-router";
 
 import { useLocation } from "@/hooks/use-location";
 import { useRestaurants } from "@/hooks/use-restaurants";
-import { useSession } from "@/hooks/use-session-store";
+import { useAuthStore } from "@/hooks/zustand/use-auth-store";
 import { useAppTheme } from "@/lib/paperTheme";
 
 const getTabBarIcon = (
@@ -22,13 +22,13 @@ const getTabBarIcon = (
 };
 
 const AppLayout = () => {
-  const { session } = useSession();
+  const { user } = useAuthStore();
   const theme = useAppTheme();
 
   useLocation();
   useRestaurants();
 
-  if (!session) {
+  if (!user) {
     return <Redirect href="\(auth)" />;
   }
 

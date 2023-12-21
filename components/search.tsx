@@ -3,7 +3,7 @@ import { FC, useState } from "react";
 import { View, TextInputProps, ViewProps } from "react-native";
 import { Searchbar } from "react-native-paper";
 
-import { useLocationStore } from "@/hooks/use-location-store";
+import { useLocationStore } from "@/hooks/zustand/use-location-store";
 
 type SearchProps = {
   value?: string;

@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useEffect } from "react";
 
-import { useLocationStore } from "@/hooks/use-location-store";
-import { useRestaurantsStore } from "@/hooks/use-restaurants-store";
+import { useLocationStore } from "@/hooks/zustand/use-location-store";
+import { useRestaurantsStore } from "@/hooks/zustand/use-restaurants-store";
 import { host, isMock } from "@/lib/env";
 import { restaurantsTransform } from "@/lib/utils";
 

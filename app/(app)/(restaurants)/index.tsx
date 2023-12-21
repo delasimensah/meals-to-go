@@ -8,8 +8,8 @@ import {
   FadeInView,
   SafeAreaView,
 } from "@/components";
-import { useLocationStore } from "@/hooks/use-location-store";
-import { useRestaurantsStore } from "@/hooks/use-restaurants-store";
+import { useLocationStore } from "@/hooks/zustand/use-location-store";
+import { useRestaurantsStore } from "@/hooks/zustand/use-restaurants-store";
 import { colors } from "@/lib/theme/colors";
 
 const RestaurantsScreen = () => {

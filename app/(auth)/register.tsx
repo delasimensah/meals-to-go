@@ -1,10 +1,10 @@
 import { router } from "expo-router";
 import { View, Text } from "react-native";
 
-import { useSession } from "@/hooks/use-session-store";
+import { useAuthStore } from "@/hooks/zustand/use-auth-store";
 
 const RegisterScreen = () => {
-  const { login } = useSession();
+  const { login } = useAuthStore();
 
   return (
     <View className="flex-1 items-center justify-center">

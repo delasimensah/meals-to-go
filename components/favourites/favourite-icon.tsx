@@ -2,7 +2,7 @@ import { AntDesign } from "@expo/vector-icons";
 import { FC } from "react";
 import { Pressable } from "react-native";
 
-import { useFavouritesStore } from "@/hooks/use-favourites-store";
+import { useFavouritesStore } from "@/hooks/zustand/use-favourites-store";
 import { Restaurant } from "@/types";
 
 type FavouriteIconProps = {
