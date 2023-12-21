@@ -23,7 +23,7 @@ const LoginScreen = () => {
 
       <Text className="text-[30px]">Meals To Go</Text>
 
-      <View className="mt-2 space-y-5 bg-white/70 p-8">
+      <View className="mt-2 space-y-[16px] bg-white/70 p-8">
         <Button
           icon="lock-open-outline"
           mode="contained"
