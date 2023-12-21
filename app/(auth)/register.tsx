@@ -33,7 +33,7 @@ const RegisterScreen = () => {
   return (
     <ImageBackground
       className="flex-1 items-center justify-center"
-      source={require("../../assets/home_bg.jpg")}
+      source={require("../../assets/home_bg-rz.jpg")}
     >
       <View className="absolute h-full w-full bg-white/30" />
 
