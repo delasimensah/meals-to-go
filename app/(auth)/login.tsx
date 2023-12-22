@@ -1,44 +1,52 @@
 import { router } from "expo-router";
 import { useState } from "react";
-import { View, Text, ImageBackground, ActivityIndicator } from "react-native";
+import { ActivityIndicator } from "react-native";
 import { Button, TextInput } from "react-native-paper";
 
+import Container from "./_components/container";
+import ErrorText from "./_components/error-text";
+import ImageBackground from "./_components/image-background";
+import Overlay from "./_components/overlay";
+import Title from "./_components/title";
+
 import { useAuthStore } from "@/hooks/zustand/use-auth-store";
+import { firebaseLogin } from "@/lib/firebase/auth";
 import { useAppTheme } from "@/lib/paperTheme";
 
 const LoginScreen = () => {
-  const { login } = useAuthStore();
+  const { setUser, loading, setLoading, setError } = useAuthStore();
 
   const theme = useAppTheme();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
 
   const handleLogin = async () => {
-    setLoading(true);
+    setLoading();
+    setError("");
+
     try {
-      login();
-      setLoading(false);
-      router.push("/");
-    } catch (error) {
-      console.log("Register Error", error);
-      setError("Something went wrong");
-      setLoading(false);
+      const user = await firebaseLogin(email, password);
+
+      setUser(user);
+      setLoading();
+    } catch (error: any) {
+      console.log("Register Error", error.message);
+
+      setError(error.message);
+      setEmail("");
+      setPassword("");
+      setLoading();
     }
   };
 
   return (
-    <ImageBackground
-      className="flex-1 items-center justify-center"
-      source={require("../../assets/home_bg-rz.jpg")}
-    >
-      <View className="absolute h-full w-full bg-white/30" />
+    <ImageBackground>
+      <Overlay />
 
-      <Text className="text-[30px]">Meals To Go</Text>
+      <Title text="Meals To Go" />
 
-      <View className="mb-[16px] mt-2 space-y-[16px] bg-white/70 p-8">
+      <Container>
         <TextInput
           label="Email"
           value={email}
@@ -59,11 +67,7 @@ const LoginScreen = () => {
           style={{ width: 300 }}
         />
 
-        {error && (
-          <View className="my-2 max-w-[300px] items-center self-center ">
-            <Text className="text-ui-error">{error}</Text>
-          </View>
-        )}
+        <ErrorText />
 
         {!loading ? (
           <Button
@@ -76,7 +80,7 @@ const LoginScreen = () => {
         ) : (
           <ActivityIndicator animating color={theme.colors.brand.primary} />
         )}
-      </View>
+      </Container>
 
       <Button
         mode="contained"

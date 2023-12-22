@@ -1,6 +1,7 @@
 import { Ionicons } from "@expo/vector-icons";
 import { Tabs, Redirect } from "expo-router";
 
+// import { useAuthState } from "@/hooks/use-auth-state";
 import { useLocation } from "@/hooks/use-location";
 import { useRestaurants } from "@/hooks/use-restaurants";
 import { useAuthStore } from "@/hooks/zustand/use-auth-store";
@@ -25,6 +26,7 @@ const AppLayout = () => {
   const { user } = useAuthStore();
   const theme = useAppTheme();
 
+  // useAuthState();
   useLocation();
   useRestaurants();
 

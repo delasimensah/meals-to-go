@@ -1,15 +1,17 @@
 import { router } from "expo-router";
 import LottieView from "lottie-react-native";
-import { View, Text, ImageBackground } from "react-native";
+import { View } from "react-native";
 import { Button } from "react-native-paper";
+
+import Container from "./_components/container";
+import ImageBackground from "./_components/image-background";
+import Overlay from "./_components/overlay";
+import Title from "./_components/title";
 
 const LoginScreen = () => {
   return (
-    <ImageBackground
-      className="flex-1 items-center justify-center"
-      source={require("../../assets/home_bg-rz.jpg")}
-    >
-      <View className="absolute h-full w-full bg-white/30" />
+    <ImageBackground>
+      <Overlay />
 
       <View className="absolute top-[30px] h-[40%] w-full p-2">
         <LottieView
@@ -21,9 +23,9 @@ const LoginScreen = () => {
         />
       </View>
 
-      <Text className="text-[30px]">Meals To Go</Text>
+      <Title text="Meals To Go" />
 
-      <View className="mt-2 space-y-[16px] bg-white/70 p-8">
+      <Container account>
         <Button
           icon="lock-open-outline"
           mode="contained"
@@ -43,7 +45,7 @@ const LoginScreen = () => {
         >
           Register
         </Button>
-      </View>
+      </Container>
     </ImageBackground>
   );
 };
