@@ -35,3 +35,8 @@ export type Restaurant = {
   isOpenNow: boolean;
   isClosedTemporarily: boolean;
 };
+
+export type CartItem = {
+  item: string;
+  price: number;
+};
