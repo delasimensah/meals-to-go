@@ -15,7 +15,7 @@ const FavouritesScreen: FC<FavouritesScreenProps> = () => {
   return favourites.length ? (
     <SafeAreaView>
       <Text>Favourites</Text>
-      {/* <FlatList
+      <FlatList
         data={favourites}
         renderItem={({ item }) => {
           return (
@@ -30,7 +30,7 @@ const FavouritesScreen: FC<FavouritesScreenProps> = () => {
         }}
         keyExtractor={(item) => item.name!}
         className="p-4"
-      /> */}
+      />
     </SafeAreaView>
   ) : (
     <SafeAreaView classes="items-center justify-center">
