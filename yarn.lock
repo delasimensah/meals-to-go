@@ -7666,6 +7666,11 @@ react-native-paper@^5.11.1:
     color "^3.1.2"
     use-latest-callback "^0.1.5"
 
+react-native-paystack@^3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/react-native-paystack/-/react-native-paystack-3.4.0.tgz#9e2d326dfb465ff99f756708dbf60af8f9bf7ee3"
+  integrity sha512-m/eP/xNHL4drQkWnnoddKBt7EX8dLknAkVRbtIHp2iYVKBCYCrjzoSM/Dl0PDhAZD4HWxM3W2UkbIRGZvVWY9A==
+
 react-native-safe-area-context@4.6.3:
   version "4.6.3"
   resolved "https://registry.npmjs.org/react-native-safe-area-context/-/react-native-safe-area-context-4.6.3.tgz"
