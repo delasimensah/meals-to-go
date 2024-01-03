@@ -14,7 +14,6 @@ const FavouritesScreen: FC<FavouritesScreenProps> = () => {
 
   return favourites.length ? (
     <SafeAreaView>
-      <Text>Favourites</Text>
       <FlatList
         data={favourites}
         renderItem={({ item }) => {
