@@ -27,8 +27,8 @@ const PaymentScreen: FC<PaymentScreenProps> = () => {
     <View className="flex-1 items-center justify-center">
       {status === "starting" && (
         <PaymentStatus
-          icon="close"
-          color={colors.ui.error}
+          icon="dots-horizontal"
+          color={colors.brand.muted}
           text="Process Starting"
         />
       )}

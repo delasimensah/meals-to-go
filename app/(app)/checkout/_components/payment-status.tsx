@@ -5,7 +5,7 @@ import { Avatar } from "react-native-paper";
 type PaymentStatusProps = {
   text: string;
   color: string;
-  icon: "check-bold" | "close";
+  icon: "check-bold" | "close" | "dots-horizontal";
 };
 
 const PaymentStatus: FC<PaymentStatusProps> = ({ icon, text, color }) => {
