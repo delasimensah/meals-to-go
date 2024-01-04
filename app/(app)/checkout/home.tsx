@@ -1,3 +1,4 @@
+import { router } from "expo-router";
 import { View, Text, ScrollView } from "react-native";
 import { Avatar, List, Divider } from "react-native-paper";
 
@@ -74,7 +75,13 @@ const CheckoutScreen = () => {
           <Divider />
         </View>
 
-        <Button text="Pay" onPress={() => {}} icon="cash" />
+        <Button
+          text="Pay"
+          onPress={() => {
+            router.push("/checkout/payment");
+          }}
+          icon="cash"
+        />
 
         <View className="p-1" />
 

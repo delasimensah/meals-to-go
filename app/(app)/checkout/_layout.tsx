@@ -4,9 +4,18 @@ const CheckoutLayout = () => {
   return (
     <Stack>
       <Stack.Screen
-        name="index"
+        name="home"
         options={{
           title: "Checkout",
+        }}
+      />
+
+      <Stack.Screen
+        name="payment"
+        options={{
+          title: "Payment",
+          presentation: "modal",
+          headerShown: false,
         }}
       />
     </Stack>
